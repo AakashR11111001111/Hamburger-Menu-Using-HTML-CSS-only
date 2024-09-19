@@ -78,6 +78,10 @@ menu {
   transform: translateX(0px);
 }
 
+.menu input:checked ~ .icon img{
+  transform: rotate(45deg);
+}
+
 .lists li {
   text-align: center;
   font-weight: 500;
@@ -96,7 +100,8 @@ menu {
 
 .menu .icon img:hover {
   cursor: pointer; 
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(214,214,214, 0.3);
   border-radius: 50%;
-  box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 0px 10px rgba(214, 214, 214, 0.3);
 }
+
