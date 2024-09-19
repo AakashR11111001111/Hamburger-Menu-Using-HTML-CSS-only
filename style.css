@@ -22,6 +22,7 @@ menu {
   height: 100px;
   width: 100vw;
   background: rgba(121, 121, 121, 0.3);
+  background: linear-gradient(90deg, rgba(0,0,0,0.7)0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3)75%, rgba(0,0,0,0.1)100%);
   position: relative;
   display: flex;
   align-items: center; 
@@ -61,23 +62,28 @@ menu {
   transition: all 0.2s ease;
 }
 
-.lists {
-  font-size: 20px;
-  color: white;
-  list-style-type: none;
-  height: calc(100vh - 100px);
-  background: rgba(121, 121, 121, 0.3);
+.list-1-div{
   width: 300px;
-  line-height: 55px;
   transform: translateX(-100%);
+  background: linear-gradient(90deg, rgba(0,0,0,0.7)0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3)75%, rgba(0, 0, 0, 0.1), rgba(0,0,0,0.0)100%);
   transition: transform 0.2s cubic-bezier(.29, .08, .45, .81);
   position: absolute;
+  backdrop-filter: blur(5px);
   top: 100px;
   left: 0;
   z-index: 90;
 }
 
-.menu input:checked ~ .lists {
+.list-1-div .lists {
+  font-size: 20px;
+  background: transparent;
+  color: white;
+  list-style-type: none;
+  height: calc(100vh - 100px);
+  line-height: 55px;
+}
+
+.menu input:checked ~ .list-1-div {
   transform: translateX(0px);
 }
 
@@ -85,13 +91,13 @@ menu {
   transform: rotate(45deg);
 }
 
-.lists li {
+.list-1-div .lists li {
   text-align: center;
   font-weight: 500;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-.lists li:hover {
+.list-1-div .lists li:hover {
   cursor: pointer;
   transform: translateX(15px);
   color: white;
